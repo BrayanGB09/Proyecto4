@@ -1,6 +1,6 @@
 4285
 70C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\dotenv133686450303808545 1
-63C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\package.json133686456963800416 0
+63C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\package.json133686455554232246 0
 119C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\lmdb\dependencies\lmdb-data-v1\libraries\liblmdb\midl.c133686450309364121 0
 94C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\compressor-raw\LICENSE133686450301751540 0
 101C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\svgo\lib\svgo\css-select-adapter.d.ts133686450310021816 0
@@ -23,7 +23,7 @@
 81C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\parcel\lib\bin.js133686450302506856 0
 95C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\regions\BG.js133686450309523614 0
 98C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\type-fest\ts41\delimiter-case.d.ts133686450305456735 0
-54C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\src133686456144281576 1
+54C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\src133686455418940588 1
 69C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\tslib133686450305456735 1
 82C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\utility-types\dist133686450306337288 1
 63C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules133686450328571070 1
@@ -40,7 +40,7 @@
 94C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\source-map-support\register.js133686450303186051 0
 88C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\abortcontroller-polyfill133686450305853803 1
 95C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\regions\KN.js133686450314533322 0
-55C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist133686456965500594 1
+55C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist133686449641495969 1
 96C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\utils\src\http-server.js133686450307267479 0
 105C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\features\blobbuilder.js133686450309684665 0
 83C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\lmdb\dict\dict2.txt133686450311539136 0
@@ -54,7 +54,7 @@
 110C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\features\css-revert-value.js133686450312199639 0
 91C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\css-tree\lib\utils\names.js133686450310153144 0
 95C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\regions\AO.js133686450307231141 0
-59C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\src\html133686456144281576 1
+59C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\src\html133686455418940588 1
 103C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\css-tree\lib\syntax\atrule\font-face.js133686450309031214 0
 88C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\picocolors\picocolors.js133686450302851718 0
 95C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\regions\JP.js133686450314355354 0
@@ -75,7 +75,16 @@
 115C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\features\subresource-integrity.js133686450316449587 0
 107C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@mischnic\json-sourcemap\dist\index.js.flow133686450304055612 0
 82C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\lmdb\src\windows.c133686450309867427 0
-70C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\src\html\login.html133686453002448656 0
+72C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\error-ex133686450303172663 1
+94C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\core\lib\loadDotEnv.js133686450310021816 0
+73C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@trysound133686450291854842 1
+70C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@babel133686450291960340 1
+87C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\nullthrows\package.json133686450301561810 0
+95C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\regions\GL.js133686450313521973 0
+104C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\type-fest\source\fixed-length-array.d.ts133686450306020431 0
+81C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\is-json\README.md133686450302851718 0
+92C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\node-gyp-build\build-test.js133686450302851718 0
+65C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\src\login.html133686453002448656 0
 104C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\css-select\lib\pseudo-selectors\index.js133686450304894802 0
 72C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\entities133686450306615481 1
 148C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\side-effects-false\package.json133686450310517878 0
@@ -92,12 +101,6 @@
 88C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\safe-buffer\package.json133686450302851718 0
 82C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\.package-lock.json133686450328571070 0
 95C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\lightningcss\node\index.js.flow133686450304020885 0
-72C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\error-ex133686450303172663 1
-94C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\core\lib\loadDotEnv.js133686450310021816 0
-73C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@trysound133686450291854842 1
-70C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@babel133686450291960340 1
-87C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\nullthrows\package.json133686450301561810 0
-95C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\regions\GL.js133686450313521973 0
 95C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\regions\MK.js133686450315166667 0
 75C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\buffer-from133686450303186051 1
 81C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data133686450313198458 1
@@ -914,7 +917,6 @@
 140C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\msgpackr-extract\node_modules\node-gyp-build-optional-packages\build-test.js133686450302927314 0
 113C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\caniuse-lite\data\features\css-conic-gradients.js133686450311188191 0
 93C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\type-fest\source\entries.d.ts133686450305569928 0
-104C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\type-fest\source\fixed-length-array.d.ts133686450306020431 0
 83C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\micromatch\index.js133686450302355690 0
 88C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\domhandler\lib\node.d.ts133686450305060640 0
 91C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\svgo\plugins\mergeStyles.js133686450307853879 0
@@ -1614,8 +1616,6 @@
 106C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\node-gyp-build-optional-packages\README.md133686450304244720 0
 85C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\node-gyp-build\bin.js133686450302355690 0
 113C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\package-manager\src\promiseFromProcess.js133686450307828722 0
-81C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\is-json\README.md133686450302851718 0
-92C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\node-gyp-build\build-test.js133686450302851718 0
 171C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\package-browser-alias\subfolder1\subfolder2\subfile.js133686450309987524 0
 86C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\node-gyp-build\LICENSE133686450301587819 0
 108C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\lmdb\node_modules\node-addon-api\except.gypi133686450303190246 0
@@ -3832,7 +3832,7 @@
 88C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\packager-raw\lib133686450302425824 1
 103C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\packager-raw\src\RawPackager.js133686450303091913 0
 102C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\core\src\public\BundleGroup.js133686450308794859 0
-73C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\index.579125c3.js133686456964769111 0
+73C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\index.579125c3.js133686449641415862 0
 98C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\core\src\serializerCore.js133686450311188191 0
 103C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\packager-raw\lib\RawPackager.js133686450302613839 0
 87C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\@parcel\packager-js\lib133686450306337288 1
@@ -4280,7 +4280,7 @@
 77C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\.bin\svgo.ps1133686450317406756 0
 79C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\.bin\terser.cmd133686450317406756 0
 79C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\.bin\terser.ps1133686450317406756 0
-77C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\index.579125c3.js.map133686456964849143 0
-66C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\index.html133686456921100371 0
-77C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\Proyecto4.59712999.js133686456964769111 0
-81C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\Proyecto4.59712999.js.map133686456964849143 0
+77C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\index.579125c3.js.map133686449641495969 0
+66C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\index.html133686449641495969 0
+77C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\Proyecto4.59712999.js133686449641415862 0
+81C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\dist\Proyecto4.59712999.js.map133686449641415862 0

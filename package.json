@@ -2,9 +2,9 @@
   "name": "vanilla-js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "Brayan": "login.html",
   "scripts": {
-    "start": "parcel src/index.html --open"
+    "start": "parcel src/html/login.html --open"
   },
   "keywords": [],
   "author": "",
