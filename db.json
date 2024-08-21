@@ -1,3 +1,18 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "d4b9",
+      "nombre": "Briana",
+      "apellido": "Lopez",
+      "correo": "briana@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "9d47",
+      "nombre": "Brayan",
+      "apellido": "Gutiérrez",
+      "correo": "brayan@gmail.com",
+      "password": "135780"
+    }
+  ]
 }
