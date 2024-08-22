@@ -3,7 +3,9 @@ async function updateUsers(nombre, apellido,id) {
      
         const userData = { 
             nombre, 
-            apellido 
+            apellido, 
+            cooreo,
+            password
         
         };
         const response = await fetch("http://localhost:3001/users/"+id, {

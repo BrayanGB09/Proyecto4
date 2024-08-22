@@ -34,7 +34,7 @@
 82C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\dom-serializer\lib133686450306020431 1
 74C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\terser\lib133686450309364121 1
 99C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\css-tree\lib\syntax\atrule\index.js133686450309702820 0
-58C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\db.json133687493936871765 0
+58C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\db.json133687504051722197 0
 72C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\css-tree133686450311188191 1
 94C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\source-map-support\register.js133686450303186051 0
 88C:\Users\Brayan\Desktop\Proyecto tickets\Proyecto4\node_modules\abortcontroller-polyfill133686450305853803 1

@@ -7,11 +7,14 @@ const password = document.getElementById("password");
 
 const btnRegistro = document.getElementById("btnRegistro");
 
-
 btnRegistro.addEventListener("click", function () {
+   if (password.value.length === 0) {
+      alert("Debe ingresar los datos")
+   }else{
+      postUsers(nombre.value, apellido.value, correo.value, password.value);  
+         alert("Usuario Registrado")
+   }
    
-   postUsers(nombre.value, apellido.value, correo.value, password.value);
-
 })
 
 

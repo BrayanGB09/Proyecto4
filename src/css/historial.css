@@ -1,0 +1,13 @@
+table{
+    display: flex;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+}
+
+td{
+    border: solid thin black;
+    height: 50px;
+}
+th{
+    border: solid thin black;
+}
