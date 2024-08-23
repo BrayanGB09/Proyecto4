@@ -48,24 +48,6 @@ body {
   margin: 15px 0;
 }
 
-.info-childs input {
-  color: #666;
-  cursor: pointer;
-  background-color: #0000;
-  border: 2px solid #666;
-  border-radius: 20px;
-  outline: none;
-  padding: 10px 20px;
-  transition: background-color .3s;
-}
-
-.info-childs input:hover {
-  color: #fff;
-  background-color: #9191bd;
-  border: none;
-  box-shadow: 0 2px 5px #0000001a;
-}
-
 .form-information {
   width: 60%;
   text-align: center;
@@ -128,6 +110,23 @@ form {
 
 .btn:hover {
   background-color: #9191bd;
+}
+
+.btn1 {
+  color: #666;
+  cursor: pointer;
+  background-color: #0000;
+  border: 2px solid #666;
+  border-radius: 20px;
+  outline: none;
+  padding: 10px 20px;
+}
+
+.btn1:hover {
+  color: #fff;
+  background-color: #9191bd;
+  border: none;
+  box-shadow: 0 2px 5px #0000001a;
 }
 
 /*# sourceMappingURL=login.4cdbd4fe.css.map */

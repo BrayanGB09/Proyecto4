@@ -1,10 +1,11 @@
-async function updateUsers(nombre, apellido,id) {
+async function updateUsers(nombre, apellido,correo,password,id) {
     try {
      
         const userData = { 
             nombre, 
             apellido, 
-            cooreo,
+            id,
+            correo,
             password
         
         };

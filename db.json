@@ -1,17 +1,20 @@
 {
   "users": [
     {
-      "id": "9d47",
+      "id": "4def",
       "nombre": "Brayan",
       "apellido": "Gutiérrez",
       "correo": "brayan@gmail.com",
-      "password": "135780"
+      "password": "123456"
+    },
+    {
+      "id": "7354",
+      "nombre": "Briana",
+      "apellido": "Lopez",
+      "correo": "briana@gmail.com",
+      "password": "123456"
     }
   ],
-  
-  
   "consultas": [],
-
-  
-  "Historial": []
+  "historial": []
 }

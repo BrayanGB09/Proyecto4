@@ -1,24 +1,39 @@
-//import { getUsers } from "../services/getUsers";
+import { getUsers } from "../services/getUsers";
 
 const correo = document.getElementById("correo");
-const id = document.getElementById("id");
+const id = document.getElementById("id")//
 const password = document.getElementById("password");
 const bntInicio = document.getElementById("btnInicio");
 
-const datos = JSON.parse( localStorage.getItem("listaUsuarios")||[])
 
-bntInicio.addEventListener("click",function () {
+const usuarioDatos = JSON.parse(localStorage.getItem("usuarioDatos")) || [];
 
-    if (correo.value.length == 0 && id.value.length == 0 && password.value.length == 0) {
-        alert("Debe ingresar datos")
-    }
-    
-  for (let index = 0; index < listaUsuarios.length; index++) {
-    
-        if (datos[index].correo === correo.value && listaUsuarios[index].id === id.value && listaUsuarios[index].password === password.value) {
-            alert("Ingreso exitoso")
-            window.location ="http://127.0.0.1:5500/Proyecto4/src/html/principal.html";
+bntInicio.addEventListener("click", function () {
+
+validarUsuario ()
+ async function validarUsuario() {
+    const lista = await getUsers()
+
+    for (let index = 0; index < lista.length; index++) {
+
+        if (lista[index].correo === correo.value && lista[index].id === id.value && lista[index].password === password.value) {
+           usuarioDatos = lista[index].nombre
+           localStorage.setItem("usuarioDatos",(usuarioDatos))
+           console.log("Usuario Registrado")
+           window.location.href = "principal.html"
+        }else{
+         mensaje.textContent = "Usuario no encontrado"
         }
-    }
-    
+      }
+   }
 })
+
+
+
+
+
+
+
+
+
+

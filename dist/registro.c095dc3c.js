@@ -557,6 +557,7 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"cq6cn":[function(require,module,exports) {
+var _getUsers = require("../services/getUsers");
 var _postUsers = require("../services/postUsers");
 const nombre = document.getElementById("nombre");
 const apellido = document.getElementById("apellido");
@@ -564,37 +565,32 @@ const correo = document.getElementById("correo");
 const password = document.getElementById("password");
 const btnRegistro = document.getElementById("btnRegistro");
 btnRegistro.addEventListener("click", function() {
-    (0, _postUsers.postUsers)(nombre.value, apellido.value, correo.value, password.value);
-}) //traerUsuario()
- //async function traerUsuario() {
- // const nombre = document.getElementById("nombre")
- // const correo = document.getElementById("correo")
- //  const password = document.getElementById("password")
- //  let nombres = await GetUsers();
- // let correos = await GetUsers();
- // let passwords = await GetUsers();
- // nombre.innerHTML = nombres[0].nombre
- // correo.innerHTML = correos[0].correo
- // password.innerHTML = passwords[0].password//
- //}
- //const nombre = document.getElementById("nombre");
- //const email = document.getElementById("email");
- //const pass = document.getElementById("pass");
- //const regist = document.getElementById("regist");
- //const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
- //regist.addEventListener("click", function () {
- //  let lista = {
- //      nombre: nombre.value,
- //      email: email.value,
- //     pass: pass.value
- // };
- // listaUsuarios.push(lista);
- //  localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
- //  window.location = "http://127.0.0.1:5500/Proyecto/login.html";
- //});
-;
+    crearUsuario();
+    async function crearUsuario() {
+        const nombreUsuario = nombre.value;
+        const apellidoUsuario = apellido.value;
+        const correoUsuario = correo.value;
+        const passwordUsuario = password.value;
+        if (!nombreUsuario || !apellidoUsuario || !correoUsuario || !passwordUsuario) mensaje.textContent = "Debe llenar los espacios";
+        else {
+            nombre.value = " ";
+            apellido.value = " ";
+            correo.value = " ";
+            password.value = "";
+            let correoExistente = [];
+            const Usuarios = await (0, _getUsers.getUsers)();
+            correoExistente = Usuarios.filter((users)=>users.correo === correoUsuario);
+            console.log(correoExistente);
+            if (correoExistente.length > 0) mensaje.textContent = "Este correo ya fue registrado";
+            else {
+                response = await (0, _postUsers.postUsers)(nombreUsuario, apellidoUsuario, correoUsuario, passwordUsuario);
+                window.location.href = "login.html";
+            }
+        }
+    }
+});
 
-},{"../services/postUsers":"dzUx9"}],"dzUx9":[function(require,module,exports) {
+},{"../services/postUsers":"dzUx9","../services/getUsers":"b4hYb"}],"dzUx9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "postUsers", ()=>postUsers);
@@ -650,6 +646,27 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["aZuGN","cq6cn"], "cq6cn", "parcelRequire6682")
+},{}],"b4hYb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getUsers", ()=>getUsers);
+async function getUsers() {
+    try {
+        const response = await fetch("http://localhost:3001/users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        if (!response.ok) throw new Error("Error fetching users");
+        const users = await response.json();
+        return users;
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        throw error;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["aZuGN","cq6cn"], "cq6cn", "parcelRequire6682")
 
 //# sourceMappingURL=registro.c095dc3c.js.map

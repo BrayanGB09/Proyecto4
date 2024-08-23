@@ -48,24 +48,6 @@ body{
     color: #666;
 }
 
-.info-childs input{
-    background-color: transparent;
-    outline: none;
-    border: solid 2px #666;
-    border-radius: 20px;
-    padding: 10px 20px;
-    color: #666;
-    cursor: pointer;
-    transition: background-color .3s ease
-}
-
-.info-childs input:hover{
-    background-color: #9191bd;
-    border: none;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-}
-
 .form-information{
     display: flex;
     align-items: center;
@@ -129,4 +111,21 @@ form{
 .btn:hover{
     background-color: #9191bd;
 
+}
+
+.btn1{
+    background-color: transparent;
+    outline: none;
+    border: solid 2px #666;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #666;
+    cursor: pointer;
+}
+
+.btn1:hover{
+    background-color: #9191bd;
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }

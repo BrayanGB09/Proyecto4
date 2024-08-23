@@ -19,7 +19,6 @@ body{
     box-shadow: 0 10px 40px -5px gray;
     height: 500px;
     max-width: 900px;
-    transition: all is ease;
     margin: 10px;
 }
 
@@ -46,24 +45,6 @@ body{
 .info-childs p{
     margin: 15px 0;
     color: #666;
-}
-
-.info-childs input{
-    background-color: transparent;
-    outline: none;
-    border: solid 2px #666;
-    border-radius: 20px;
-    padding: 10px 20px;
-    color: #666;
-    cursor: pointer;
-    transition: background-color .3s ease
-}
-
-.info-childs input:hover{
-    background-color: #9191bd;
-    border: none;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
 
 .form-information{
@@ -129,4 +110,21 @@ form{
 .btn:hover{
     background-color: #9191bd;
 
+}
+
+.btn2{
+    background-color: transparent;
+    outline: none;
+    border: solid 2px #666;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #666;
+    cursor: pointer;
+}
+
+.btn2:hover{
+    background-color: #9191bd;
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }

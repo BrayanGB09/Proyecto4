@@ -1,3 +1,5 @@
+
+
 const nombre = document.getElementById("nombre")
 const apellido = document.getElementById("apellido")
 const consulta = document.getElementById("consulta")
@@ -34,7 +36,7 @@ btnGuardar.addEventListener("click", function () {
 
         contenedorConsulta.appendChild(divConsulta)
 
-        let conca1 = nombre.value + " " + apellido.value + " " + "/" + " " + consulta.value + " " + "/" + " " + date.value + " " + "/" + " " + hora.value
+        let conca1 = nombre.value + " " + apellido.value + " " + "/" + " " + consulta.value + " " + "/" + " " + date.value + " " + "/" + " " + hora.value;
         textoConsulta.innerHTML = conca1
 
         divConsulta.appendChild(textoConsulta)
@@ -46,4 +48,5 @@ btnGuardar.addEventListener("click", function () {
             divConsulta.removeChild(btnRechazar)
             divConsulta.removeChild(btnAprobar)
         })
+        
 })
