@@ -557,6 +557,8 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"eaxkg":[function(require,module,exports) {
+var _postConsultas = require("../services/postConsultas");
+//import { deleteConsultas } from "../services/deleteConsultas";
 const nombre = document.getElementById("nombre");
 const apellido = document.getElementById("apellido");
 const consulta = document.getElementById("consulta");
@@ -565,6 +567,21 @@ const hora = document.getElementById("hora");
 const btnGuardar = document.getElementById("btnGuardar");
 const contenedorConsulta = document.getElementById("contenedorConsulta");
 btnGuardar.addEventListener("click", function() {
+    crearUsuario();
+    async function crearUsuario() {
+        const nombreUsuario = nombre.value;
+        const apellidoUsuario = apellido.value;
+        const consultaUsuario = consulta.value;
+        const dateConsulta = date.value;
+        const horaConsulta = hora.value;
+        if (!nombreUsuario || !apellidoUsuario || !consultaUsuario || !dateConsulta || !horaConsulta) {
+            mensaje.textContent = "Debe llenar los espacios";
+            return;
+        } else {
+            mensaje.textContent = "Consulta regitrada correctamente";
+            response = await (0, _postConsultas.postConsultas)(nombreUsuario, apellidoUsuario, consultaUsuario, dateConsulta, horaConsulta);
+        }
+    }
     const textoConsulta = document.createElement("p");
     const btnRechazar = document.createElement("button");
     const btnAprobar = document.createElement("button");
@@ -582,7 +599,7 @@ btnGuardar.addEventListener("click", function() {
     textoConsulta.innerHTML = hora.value;
     contenedorConsulta.appendChild(textoConsulta);
     contenedorConsulta.appendChild(divConsulta);
-    let conca1 = nombre.value + " " + apellido.value + " " + "/" + " " + consulta.value + " " + "/" + " " + date.value + " " + "/" + " " + hora.value;
+    let conca1 = nombre.value + " " + apellido.value + " " + "/" + " " + consulta.value + " " + "/" + " " + date.value + " " + "/" + " " + hora.value + " " + "/" + " " + "Pendiente";
     textoConsulta.innerHTML = conca1;
     divConsulta.appendChild(textoConsulta);
     divConsulta.appendChild(btnRechazar);
@@ -593,6 +610,86 @@ btnGuardar.addEventListener("click", function() {
         divConsulta.removeChild(btnAprobar);
     });
 });
+
+},{"../services/postConsultas":"jiBUy"}],"jiBUy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "postConsultas", ()=>postConsultas);
+parcelHelpers.export(exports, "postHistorial", ()=>postHistorial);
+async function postConsultas(nombre, apellido, consultas, date, hora) {
+    try {
+        const userData = {
+            nombre,
+            apellido,
+            consultas,
+            date,
+            hora
+        };
+        const response = await fetch("http://localhost:3001/consultas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        });
+        return await response.json();
+    } catch (error) {
+        console.error("Error posting user:", error);
+        throw error;
+    }
+}
+async function postHistorial(nombre, apellido, consultas, date, hora) {
+    try {
+        const userData = {
+            nombre,
+            apellido,
+            consultas,
+            date,
+            hora
+        };
+        const response = await fetch("http://localhost:3001/historial", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        });
+        return await response.json();
+    } catch (error) {
+        console.error("Error posting user:", error);
+        throw error;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["5rt7n","eaxkg"], "eaxkg", "parcelRequire6682")
 

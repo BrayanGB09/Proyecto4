@@ -7,6 +7,9 @@
 
 body {
   background-color: #141c29;
+  background-image: url("3b0fa6e6f369d1069723eff505c3b149.331a21b9.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 80px;
   font-family: Space Grotesk, sans-serif;
 }
@@ -77,6 +80,16 @@ body {
   font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
   font-size: 25px;
   font-weight: 600;
+}
+
+.label {
+  background-color: #fff;
+  border-radius: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  display: flex;
+  box-shadow: 0 2px 5px #0000001a;
 }
 
 button {

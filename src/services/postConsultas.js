@@ -1,11 +1,12 @@
-async function postConsultas(nombre,apellido,consultas,date) {
+async function postConsultas(nombre,apellido,consultas,date,hora) {
     try {
      
         const userData = { 
             nombre,
             apellido,
             consultas,
-            date
+            date, 
+            hora
          
         };
 

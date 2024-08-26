@@ -8,13 +8,22 @@
       "password": "123456"
     },
     {
-      "id": "7354",
+      "id": "6ca3",
       "nombre": "Briana",
       "apellido": "Lopez",
       "correo": "briana@gmail.com",
-      "password": "123456"
+      "password": "12345678"
     }
   ],
-  "consultas": [],
+  "consultas": [
+    {
+      "id": "d2e7",
+      "nombre": "Briana",
+      "apellido": "Lopez",
+      "consultas": "gggghuujjjgt",
+      "date": "2024-08-26",
+      "hora": "13:42"
+    }
+  ],
   "historial": []
 }

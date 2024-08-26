@@ -1,33 +1,37 @@
-import { getUsers } from "../services/getUsers";
+import { getUsers } from "../services/getUsers"
 
-const correo = document.getElementById("correo");
-const id = document.getElementById("id")//
-const password = document.getElementById("password");
-const bntInicio = document.getElementById("btnInicio");
-
+const correo = document.getElementById("correo")
+const password = document.getElementById("password")
+const btnInicio = document.getElementById("btnInicio")
+const mensaje = document.getElementById("mensaje")
 
 const usuarioDatos = JSON.parse(localStorage.getItem("usuarioDatos")) || [];
 
-bntInicio.addEventListener("click", function () {
+btnInicio.addEventListener("click", function () {
 
-validarUsuario ()
- async function validarUsuario() {
-    const lista = await getUsers()
+   validarUsuario()
 
-    for (let index = 0; index < lista.length; index++) {
+   async function validarUsuario() {
+      
+      const lista = await getUsers()
 
-        if (lista[index].correo === correo.value && lista[index].id === id.value && lista[index].password === password.value) {
-           usuarioDatos = lista[index].nombre
-           localStorage.setItem("usuarioDatos",(usuarioDatos))
-           console.log("Usuario Registrado")
-           window.location.href = "principal.html"
-        }else{
-         mensaje.textContent = "Usuario no encontrado"
-        }
-      }
-   }
+      console.log(lista);
+      console.log(usuarioDatos);
+
+        for (let index = 0; index < lista.length; index++) {
+   
+           if (lista[index].correo === correo.value && lista[index].password === password.value) {
+             let usuarioDatos = lista [index].nombre
+             localStorage.setItem("usuarioDatos",(usuarioDatos))
+             mensaje.textContent = "¡Usuario registrado!";
+             window.location.href = "principal.html"
+
+            }else{
+             mensaje.textContent = "¡Usuario no registrado!";
+            }
+         }
+   }  
 })
-
 
 
 

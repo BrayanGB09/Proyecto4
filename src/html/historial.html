@@ -4,39 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <link rel="stylesheet" href="../css/historial.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/historial.css">
 </head>
 <body>   
-  <div class="contenedorEstados">
-    <h2>Estados</h2>
-  </div>
-   
-    <br>
-    <br>
+  <h1>Historial de Consultas</h1>
 
-  <div class="contenedorEstudiantes">
-    <h2>Estudiantes</h2>
-  </div>
+  <label class="label">
+    <input class="buscador" type="search" id="buscador" placeholder="Buscar">
+    <button class="btnBuscar" id="btnBuscar"><i class='bx bx-search-alt-2'></i></button>
+  </label>
 
-    <br>
-    <br>
-
-  <div id="contenedorFecha">
-    <h2>Fecha</h2>
-  </div>
-
-    <br>
-    <br>
-
-  <div class="contenedorHora">
-    <h2>Hora</h2>
-  </div>
-
-    <br>
-    <br>
-       
-  <div class="contenedorConsulta">
-    <h2>Detalle de la consulta</h2>
-  </div>
+    <section class="tablaConsultas"> 
+      <table id="tablaConsultas">
+          <thead>
+            <tr>
+              <th id="nombre">Nombre</th>
+              <th id="apellido">Apellido</th>
+              <th id="consulta">Consulta</th>
+              <th id="fecha">Fecha</th>
+              <th id="hora">Hora</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+            <tbody id="cuerpoTabla">
+            </tbody>
+        </table>
+      </section>
+  <script type="module" src="../js/historial.js"></script>
 </body>
 </html>

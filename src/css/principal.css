@@ -5,6 +5,9 @@
     color: white;
 }
 body {
+    background-image: url(../img/3b0fa6e6f369d1069723eff505c3b149.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Space Grotesk', sans-serif;
     background-color: #141C29;
     padding-top: 80px;
@@ -80,6 +83,16 @@ body {
     font-size: 25px;
     font-weight: 600;
     margin-left: 2%;
+}
+
+.label { 
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 0 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
 
 button{
