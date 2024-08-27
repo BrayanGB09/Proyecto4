@@ -8,26 +8,30 @@
     <link rel="stylesheet" href="../css/historial.css">
 </head>
 <body>   
-  <h1>Historial de Consultas</h1>
+  <header>
+    <div><h3>Historial de solicitudes</h3></div>
+
+    <div><button id="btnPrincipal" class="btnPrincipal">Volver a la Principal</button></div>
 
   <label class="label">
     <input class="buscador" type="search" id="buscador" placeholder="Buscar">
     <button class="btnBuscar" id="btnBuscar"><i class='bx bx-search-alt-2'></i></button>
   </label>
+</header>
 
     <section class="tablaConsultas"> 
       <table id="tablaConsultas">
           <thead>
             <tr>
-              <th id="nombre">Nombre</th>
-              <th id="apellido">Apellido</th>
-              <th id="consulta">Consulta</th>
-              <th id="fecha">Fecha</th>
-              <th id="hora">Hora</th>
-              <th>Estado</th>
+              <th class="datos" id="nombre">Nombre</th>
+              <th class="datos" id="apellido">Apellido</th>
+              <th class="datos" id="consultas">Consulta</th>
+              <th class="datos" id="fecha">Fecha</th>
+              <th class="datos" id="hora">Hora</th>
+              <th class="datos">Estado</th>
             </tr>
           </thead>
-            <tbody id="cuerpoTabla">
+            <tbody id="cuerpoTablaHistorial">
             </tbody>
         </table>
       </section>

@@ -1,28 +1,31 @@
 {
   "users": [
     {
-      "id": "4def",
+      "id": "3002",
       "nombre": "Brayan",
       "apellido": "Gutiérrez",
       "correo": "brayan@gmail.com",
       "password": "123456"
-    },
-    {
-      "id": "6ca3",
-      "nombre": "Briana",
-      "apellido": "Lopez",
-      "correo": "briana@gmail.com",
-      "password": "12345678"
     }
   ],
   "consultas": [
     {
-      "id": "d2e7",
-      "nombre": "Briana",
-      "apellido": "Lopez",
-      "consultas": "gggghuujjjgt",
-      "date": "2024-08-26",
-      "hora": "13:42"
+      "id": "ff77",
+      "nombre": "Brayan",
+      "apellido": "Gutiérrez",
+      "consultas": "Dormir",
+      "fecha": "2024-08-22",
+      "hora": "20:43",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "bb10",
+      "nombre": "Brayan",
+      "apellido": "Gutiérrez",
+      "consultas": "Comer",
+      "fecha": "2024-08-28",
+      "hora": "20:55",
+      "estado": "Pendiente"
     }
   ],
   "historial": []

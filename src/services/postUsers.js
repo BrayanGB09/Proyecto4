@@ -1,11 +1,11 @@
-async function postUsers(nombre,apellido,correo,password) {
+async function postUsers(nombre,apellido, correo, password) {
     try {
      
         const userData = { 
             nombre,
-            apellido,
-            correo,
-            password
+            apellido, 
+            correo, 
+            password, 
         };
 
         const response = await fetch("http://localhost:3001/users", {
@@ -16,6 +16,7 @@ async function postUsers(nombre,apellido,correo,password) {
             body: JSON.stringify(userData)
         });
 
+     
         return await response.json();
 
         

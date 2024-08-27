@@ -566,6 +566,8 @@ const date = document.getElementById("date");
 const hora = document.getElementById("hora");
 const btnGuardar = document.getElementById("btnGuardar");
 const contenedorConsulta = document.getElementById("contenedorConsulta");
+//const buscador = document.getElementById("buscador");
+//const btnBuscar = document.getElementById("btnBuscar");
 btnGuardar.addEventListener("click", function() {
     crearUsuario();
     async function crearUsuario() {
@@ -578,7 +580,7 @@ btnGuardar.addEventListener("click", function() {
             mensaje.textContent = "Debe llenar los espacios";
             return;
         } else {
-            mensaje.textContent = "Consulta regitrada correctamente";
+            mensaje.textContent = "\xa1Consulta registrada correctamente!";
             response = await (0, _postConsultas.postConsultas)(nombreUsuario, apellidoUsuario, consultaUsuario, dateConsulta, horaConsulta);
         }
     }
@@ -609,6 +611,14 @@ btnGuardar.addEventListener("click", function() {
         divConsulta.removeChild(btnRechazar);
         divConsulta.removeChild(btnAprobar);
     });
+    document.addEventListener("keyup", (e)=>{
+        if (e.target.matches(".buscador")) {
+            document.querySelectorAll(".input").forEach((tarjeta)=>{
+                tarjeta.textContent.toLocaleLowerCase().includes(e.target.value) ? tarjeta.classList.remove("filter") : tarjeta.classList.add("filter");
+            });
+            if (e.key === "Escape") e.target.value = "";
+        }
+    });
 });
 
 },{"../services/postConsultas":"jiBUy"}],"jiBUy":[function(require,module,exports) {
@@ -616,47 +626,37 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "postConsultas", ()=>postConsultas);
 parcelHelpers.export(exports, "postHistorial", ()=>postHistorial);
-async function postConsultas(nombre, apellido, consultas, date, hora) {
+async function postConsultas(consulta) {
     try {
-        const userData = {
-            nombre,
-            apellido,
-            consultas,
-            date,
-            hora
-        };
         const response = await fetch("http://localhost:3001/consultas", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(consulta)
         });
-        return await response.json();
+        if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
+        const data = await response.json();
+        return data;
     } catch (error) {
-        console.error("Error posting user:", error);
+        console.error("Error al enviar la consulta:", error);
         throw error;
     }
 }
-async function postHistorial(nombre, apellido, consultas, date, hora) {
+async function postHistorial(consulta) {
     try {
-        const userData = {
-            nombre,
-            apellido,
-            consultas,
-            date,
-            hora
-        };
         const response = await fetch("http://localhost:3001/historial", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(consulta)
         });
-        return await response.json();
+        if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
+        const data = await response.json();
+        return data;
     } catch (error) {
-        console.error("Error posting user:", error);
+        console.error("Error al enviar la consulta al historial:", error);
         throw error;
     }
 }

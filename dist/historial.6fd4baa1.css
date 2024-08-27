@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+}
+
+header {
+  width: auto;
+  height: 110px;
+  text-align: center;
+  background-color: #04082c;
+  grid-template-columns: 300px 500px 300px;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
+
+h3 {
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 25px;
+}
+
+.buscador {
+  width: 100%;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 10px;
+}
+
+.label {
+  inline-size: 300px;
+  background-color: #fff;
+  border-radius: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  display: flex;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+.btnBuscar {
+  color: #000;
+  cursor: pointer;
+  background-color: #0000;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.divTabla {
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  display: flex;
+}
+
+.contenedorTabla {
+  width: 100%;
+  max-width: 1100px;
+}
+
+table {
+  color: #04082c;
+  text-align: center;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+thead {
+  color: #fff;
+  background: linear-gradient(#04082c, #151541);
+}
+
+th {
+  padding: 20px 15px;
+  font-weight: 700;
+}
+
+tr {
+  height: 50px;
+}
+
+td {
+  width: 100px;
+  border-bottom: 1px solid #000;
+  padding: 12px;
+}
+
+tbody tr {
+  cursor: pointer;
+  background-color: #e3e3e3;
+}
+
+tbody tr:hover, button:hover {
+  background: #e3e3e34f;
+}
+
+.filter {
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
+}
+
+.btnPrincipal {
+  inline-size: 300px;
+  color: #000;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=historial.6fd4baa1.css.map */

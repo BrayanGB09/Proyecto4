@@ -557,27 +557,77 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"47T64":[function(require,module,exports) {
-//import { getUsers } from "../services/getUsers";
+var _getUsers = require("../services/getUsers");
 const correo = document.getElementById("correo");
-const id = document.getElementById("id") //
-;
 const password = document.getElementById("password");
-const bntInicio = document.getElementById("btnInicio");
-const usuarioDatos = JSON.parse(localStorage.getItem("usuarioDatos")) || [];
-bntInicio.addEventListener("click", function() {
+const btnInicio = document.getElementById("btnInicio");
+const mensaje = document.getElementById("mensaje");
+const usuarioDatos = JSON.stringify(localStorage.getItem("usuarioDatos")) || [];
+btnInicio.addEventListener("click", function() {
     validarUsuario();
     async function validarUsuario() {
-        // const lista = await getUsers()
+        const lista = await (0, _getUsers.getUsers)();
         console.log(lista);
         console.log(usuarioDatos);
-        for(let index = 0; index < lista.length; index++)if (lista[index].correo === correo.value && lista[index].id === id.value && lista[index].password === password.value) {
-            usuarioDatos = lista[index].nombre;
+        for(let index = 0; index < lista.length; index++)if (lista[index].correo === correo.value && lista[index].password === password.value) {
+            let usuarioDatos = lista[index].nombre;
             localStorage.setItem("usuarioDatos", usuarioDatos);
-            console.log("Usuario Registrado");
-            window.location.href = "principal.html";
-        } else mensaje.textContent = "Usuario no encontrado";
+            mensaje.textContent = "\xa1Usuario registrado!";
+            window.location.href = "prueba.html";
+        } else mensaje.textContent = "\xa1Usuario no registrado!";
     }
 });
+
+},{"../services/getUsers":"b4hYb"}],"b4hYb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getUsers", ()=>getUsers);
+async function getUsers() {
+    try {
+        const response = await fetch("http://localhost:3001/users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        if (!response.ok) throw new Error("Error fetching users");
+        const users = await response.json();
+        return users;
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        throw error;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["6HT3i","47T64"], "47T64", "parcelRequire6682")
 

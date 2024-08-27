@@ -1,26 +1,42 @@
 async function getConsultas() {
     try {
-        const response = await fetch('http://localhost:3001/consultas', {
+        const response = await fetch(`http://localhost:3001/consultas`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-
         if (!response.ok) {
-            throw new Error('Error fetching users');
+            throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
-
-        const users = await response.json();
-        return users;
+        const data = await response.json();
+        return data;
     } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error('Error al obtener la consulta:', error);
         throw error;
     }
 }
-
 export { getConsultas };
 
+async function getConsultasById(id) {
+    try {
+        const response = await fetch(`http://localhost:3001/consultas/`+id, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error al obtener la consulta:', error);
+        throw error;
+    }
+}
+export { getConsultasById };
 
 async function getHistorial() {
     try {
@@ -30,17 +46,14 @@ async function getHistorial() {
                 'Content-Type': 'application/json'
             }
         });
-
         if (!response.ok) {
-            throw new Error('Error fetching users');
+            throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
-
-        const users = await response.json();
-        return users;
+        const data = await response.json();
+        return data;
     } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error('Error al obtener el historial:', error);
         throw error;
     }
 }
-
-export { getHistorial };
+export  { getHistorial };

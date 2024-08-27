@@ -10,6 +10,10 @@ const btnGuardar = document.getElementById("btnGuardar")
 const contenedorConsulta = document.getElementById("contenedorConsulta")
 
 
+//const buscador = document.getElementById("buscador");
+//const btnBuscar = document.getElementById("btnBuscar");
+
+
 
 btnGuardar.addEventListener("click", function () {   
 
@@ -73,6 +77,16 @@ btnGuardar.addEventListener("click", function () {
             divConsulta.removeChild(btnAprobar)
         })
         
-
+        document.addEventListener("keyup", (e)=>{ 
+            if (e.target.matches(".buscador")){
+                document.querySelectorAll(".input").forEach((tarjeta) => {
+                    tarjeta.textContent.toLocaleLowerCase().includes(e.target.
+                    value)?tarjeta.classList.remove("filter"): tarjeta.classList.add("filter");
+                });
+                if (e.key === "Escape") {
+                    e.target.value = "";
+                }
+            }
+        })
 })
 

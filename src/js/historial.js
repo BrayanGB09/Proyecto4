@@ -1,28 +1,29 @@
-import { getConsultas,getHistorial } from "../servicios/getConsultas";
+import { getHistorial } from "../services/getConsultas";
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const buscador = document.getElementById("buscador");
-  const cuerpoTablaHistorial = document.getElementById("results");
+const cuerpoTablaHistorial = document.getElementById("cuerpoTablaHistorial");
+const btnPrincipal = document.getElementById("btnPrincipal")
+const buscador = document.getElementById("buscador");
+const btnBuscar = document.getElementById("btnBuscar");
 
-  const data = [];
 
-  buscador.addEventListener("input", () => {
-      const query = buscador.value.toLowerCase();
-      cuerpoTablaHistorial.innerHTML = '';
+btnBuscar.addEventListener("click", function () {
+   buscador()
 
-      if (query) {
-          const filtrarData = data.filter(item => item.toLowerCase().includes(query));
-          filtrarData.forEach(item => {
-              const li = document.createElement("li");
-              li.textContent = item;
-              cuerpoTablaHistorial.appendChild(li);
-          });
+   async function buscador() {
+    const cuerpoTablaHistorial = await getHistorial()
+     
+    for (let index = 0; index < cuerpoTablaHistorial.length; index++) {
+  
+      if (cuerpoTablaHistorial[index].nombre === nombre.value && cuerpoTablaHistorial[index].apellido === apellido.value && cuerpoTablaHistorial[index].consultas === consultas.value && cuerpoTablaHistorial[index].fecha === fecha.value && cuerpoTablaHistorial[index].hora === hora.value) {
+        
       }
-  });
-});
+    }
 
-cargarHistorial() 
+   }
+})
+
+
 
 async function cargarHistorial() {
     const historial = await getHistorial();
@@ -31,22 +32,50 @@ async function cargarHistorial() {
     historial.forEach(consulta => {
         const fila = document.createElement('tr');
         fila.innerHTML = `
-            <td>${consulta.nombreUsuarioUsuario}</td>
-            <td>${consulta.apellidoUsuario}</td>
-            <td>${consulta.consultaUsuario}</td>
-            <td>${consulta.dateConsulta}</td>
-            <td>${consulta.horaConsulta}</td>
+            <td>${consulta.cedulaUsuario}</td>
+            <td>${consulta.codigoComputadora}</td>
+            <td>${consulta.sede}</td>
+            <td>${consulta.fechaSalida}</td>
+            <td>${consulta.fechaRegreso}</td>
             <td>${consulta.estado || 'Pendiente'}</td>
         `;
         cuerpoTablaHistorial.appendChild(fila);
     });
 }
 
+cargarHistorial() 
+
+function verPrincipal() {
+  window.location.href = 'prueba.html';
+}
+
+btnPrincipal.addEventListener("click", verPrincipal);
 
 
+//if (e.target.matches(".buscador")){
+  //  document.querySelectorAll(".datos").forEach((tarjeta) => {
+    //    tarjeta.textContent.toLocaleLowerCase().includes(e.target.
+     //   value)?tarjeta.classList.remove("filter"): tarjeta.classList.add("filter");
+   // });
+   // if (e.key === "Escape") {
+   //     e.target.value = "";
+   // }
+//}
+//})
 
 
-  ///let input, filter, i;
-    //search = document.getElementById("buscador");
-    //filter = input.value.toUpperCase();  
-
+//function myFunction() {
+ // var input, filter, section, div, h1, i;
+///// section = document.getElementById("mySection");
+ // div = section.getElementsByTagName("div");
+ // for (i = 0; i < div.length; i++) {
+   // h1 = div[i].getElementsByTagName("h1")[0];
+   // if (h1) {
+    //  if (h1.innerHTML.toUpperCase().indexOf(filter) > -1) {
+     //   div[i].style.display = "";
+      //} else {
+       // div[i].style.display = "none";
+     // }
+   // }
+ // }
+//}

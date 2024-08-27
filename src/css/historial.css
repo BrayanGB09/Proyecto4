@@ -1,18 +1,23 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 body{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-size: cover;
+    margin: 0;
+    text-align: center;
 }
-
+header{
+    display: grid;
+    grid-template-columns: 300px 500px 300px;
+    background-color: #04082c;
+    align-items: center;
+    width: auto;
+    height: 110px;
+    text-align: center;
+    justify-content: center;
+}
+h3{
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
 .buscador{
     width: 100%;
     padding: 10px;
@@ -25,6 +30,7 @@ body{
 
 .label { 
     display: flex;
+    inline-size: 300px;
     align-items: center;
     margin-bottom: 15px;
     border-radius: 20px;
@@ -45,45 +51,76 @@ body{
     cursor: pointer;
     margin-top: 10px;
 }
-
-button:hover{
-    background-color: #9191bd;
-    border: none;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+.divTabla{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
 }
 
-i{
-    color: black;
-}
-
-.tablaConsultas{
-    width: 505px;
-    background-color: aliceblue;
-    padding: 30px;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 4px;
-    font-family: 'calibri';
-    color: black;
-    box-shadow: 7px 13px 37px #030303;
+.contenedorTabla {
+    width: 100%;
+    max-width: 1100px;
 }
 
 table {
-    width: 100%;
+    color: #04082c;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 15px;
+    table-layout: fixed;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    width: 100%;
 }
 
-table, th, td{
-    border: 1px solid #ddd;
+thead {
+    background: linear-gradient(#04082c, rgb(21, 21, 65) );
+    color: white;
 }
 
- th, td{
-   padding: 8px;
-   text-align: left;
+th {
+    padding: 20px 15px;
+    font-weight: 700;
 }
 
-th{
-    background-color: #f2f2f2;
+tr {
+    height: 50px;
+}
+
+td {
+    width: 100px;
+    padding: 12px;
+    border-bottom: solid 1px black;
+}
+
+tbody tr {
+    cursor: pointer;
+    background-color: #E3E3E3;
+}
+
+tbody tr:hover {
+    background: rgba(227, 227, 227, 0.308);
+}
+
+button:hover {
+    background: rgba(227, 227, 227, 0.308);
+}
+
+.filter{
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
+}
+
+.btnPrincipal{
+    inline-size: 300px;
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
 }

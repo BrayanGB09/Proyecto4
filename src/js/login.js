@@ -5,7 +5,7 @@ const password = document.getElementById("password")
 const btnInicio = document.getElementById("btnInicio")
 const mensaje = document.getElementById("mensaje")
 
-const usuarioDatos = JSON.parse(localStorage.getItem("usuarioDatos")) || [];
+const usuarioDatos = JSON.stringify(localStorage.getItem("usuarioDatos")) || [];
 
 btnInicio.addEventListener("click", function () {
 
@@ -22,9 +22,10 @@ btnInicio.addEventListener("click", function () {
    
            if (lista[index].correo === correo.value && lista[index].password === password.value) {
              let usuarioDatos = lista [index].nombre
+                              
              localStorage.setItem("usuarioDatos",(usuarioDatos))
              mensaje.textContent = "¡Usuario registrado!";
-             window.location.href = "principal.html"
+             window.location.href = "prueba.html"
 
             }else{
              mensaje.textContent = "¡Usuario no registrado!";

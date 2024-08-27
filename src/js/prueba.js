@@ -1,112 +1,134 @@
-import { postConsultas, postConsultasHistorial } from "../servicios/postConsultas";
-import { getConsultas, getConsultasById } from "../servicios/getConsultas";
-import { deleteConsultas } from "../servicios/deleteConsultas";
+import { postConsultas, postHistorial,} from "../services/postConsultas";
+import { getConsultas, getConsultasById } from "../services/getConsultas";
+import { deleteConsultas } from "../services/deleteConsultas";
+//import { getUsers } from "../services/getUsers";
 
 
-const nombre = document.getElementById("nombre")
-const apellido = document.getElementById("apellido")
-const consultas = document.getElementById("consulta")
-const date = document.getElementById("date")
-const hora = document.getElementById("hora")
-const btnEnviar = document.getElementById("btnGuardar");
+const nombre = document.getElementById("nombre");
+const apellido = document.getElementById("apellido");
+const consultas = document.getElementById("consultas");
+const fecha = document.getElementById("fecha");
+const hora = document.getElementById("hora");
+const btnEnviar = document.getElementById("btnEnviar");
 const btnHistorial = document.getElementById("btnHistorial");
 const mensaje = document.getElementById("mensaje");
 const cuerpoTabla = document.getElementById("cuerpoTabla");
 
 const urlHistorial = "http://localhost:3001/historial"
 
+function prellenarFormulario() {
+    
+    const usuarioDatos = JSON.stringify(localStorage.getItem("usuarioDatos"));
+    if (usuarioDatos && usuarioDatos.correo) {
+        correo.value = usuarioDatos.correo;
+    }
+}
+
 window.addEventListener("load", prellenarFormulario);
 
     consultas.forEach(consulta => {
         const fila = document.createElement("tr");
 
-        fila.innerHTML = `
-            <td>${consulta.nombreUsuario}</td>
-            <td>${consulta.apellidoUsuario}</td>
-            <td>${consulta.consultaUsuario}</td>
-            <td>${consulta.dateConsulta}</td>
-            <td>${consulta.horaConsulta}</td>
-            <td>${consulta.estado || "Pendiente"}</td>
-        `;
-  
+        fila.innerHTML = 
+            `<td>${consulta.nombre}</td>
+            <td>${consulta.apellido}</td>
+            <td>${consulta.consultas}</td>
+            <td>${consulta.fecha}</td>
+            <td>${consulta.hora}</td>
+            <td>${consulta.estado || "Pendiente"}</td>`;
+
         const celdaBotones = document.createElement("td");
 
-        const btnAprobar = document.createElement("button");
-        btnAprobar.textContent = "Aceptar";
-        btnAprobar.addEventListener('click', () => aceptarConsultas(consulta.id));
+        const btnAceptar = document.createElement("button");
+        btnAceptar.classList.add("btnAceptar");
+        btnAceptar.textContent = "Aceptar";
+        btnAceptar.addEventListener('click', () => aceptarConsulta(info.id));
 
         const btnRechazar = document.createElement("button");
+        btnRechazar.classList.add("btnRechazar");
         btnRechazar.textContent = "Rechazar";
-        btnRechazar.addEventListener('click', () => rechazarConsultas(consulta.id));
+        btnRechazar.addEventListener('click', () => rechazarConsulta(info.id));
 
         celdaBotones.appendChild(btnAceptar);
         celdaBotones.appendChild( btnRechazar);
 
         fila.appendChild(celdaBotones);
-
+       
         cuerpoTabla.appendChild(fila);
-    });
+   });
 
+cargarConsultas()
+
+async function cargarConsultas() {
+    let consulta = await getConsultas();
+    cuerpoTabla.innerHTML = "";
+
+    renderizarSolicitudes(consulta);
+}
 
 async function enviarConsulta() {
-
-    if (!nombre.value || !apellido.value || !consultas.value || !date.value || !hora.value) {
+    if (!nombre.value || !apellido.value || !consultas.value || !fecha.value || !hora.value) {
         mensaje.textContent = "Por favor, complete todos los campos";
         return;
     }
 
-        const nuevaSolicitud = {
-        nombreUsuario: nombre.value,
-        apellidoUsuario: apellido.value,
-        consultaUsuario: consultas.value,
-        dateConsulta: date.value,
-        horaConsulta: hora.value,
+        const nuevaConsulta = {
+        nombre: nombre.value,
+        apellido: apellido.value,
+        consultas: consultas.value,
+        fecha: fecha.value,
+        hora: hora.value,
         estado:"Pendiente"
     };
 
+    await postConsultas(nuevaConsulta);
+    mensaje.textContent = "Consulta enviada con éxito"
 
-    await postConsultas(nuevaSolicitud);
-    mensaje.textContent = "Consulta enviada exitosamente";
-    console.log(nuevaSolicitud);  
+    console.log(nuevaConsulta);  
+    cargarConsultas()
 
     nombre.value = "";
     apellido.value = "";
     consultas.value = "";
-    date.value = "";
+    fecha.value = "";
     hora.value = "";
 }
 
-async function aceptarConsultas(idConsultas) {
+async function aceptarConsulta(idConsulta) {
 
-    console.log(idConsultas);
+    console.log(idConsulta);
     
-    let consulta = await getConsultasById(idConsultas);
+    let consulta = await getConsultasById(idConsulta);
     consulta.estado = "Aceptada";
 
     console.log(consulta);
     
-    await postConsultasHistorial(consulta); 
-    await deleteConsultas(idConsultas); 
+    await postHistorial(consulta); 
+    await deleteConsultas(idConsulta); 
+    await postConsultas(consulta, urlHistorial);
+    cargarConsultas(); 
 }
 
-async function rechazarConsultas(idConsultas) {
+async function rechazarConsulta(idConsulta) {
 
-    console.log(idConsultas);
+    console.log(idConsulta);
 
-    let consulta = await getConsultasById(idConsultas);
+    let consulta = await getConsultasById(idConsulta);
     consulta.estado = "Rechazada";
 
     console.log(consulta);
 
-    await postConsultasHistorial(consulta); 
-    await deleteConsultas(idConsultas); 
+    await postHistorial(consulta); 
+    await deleteConsultas(idConsulta);
+    await postConsultas(consulta, urlHistorial);
+    cargarConsultas(); 
 }
 
-moverConsultasAlHistorial();
+moverConsultaAlHistorial();
 
-async function moverConsultasAlHistorial(Consultas) {
-    delete Consultas.id; 
-    await postConsultas(Consultas, urlHistorial);
+async function moverConsultaAlHistorial(consulta) {
+    delete consulta.id;
+    
 }
 
 function verHistorial() {
@@ -115,5 +137,7 @@ function verHistorial() {
 
 btnHistorial.addEventListener("click", verHistorial);
 
-
 btnEnviar.addEventListener("click", enviarConsulta);
+
+console.log(enviarConsulta);
+console.log(postHistorial);
