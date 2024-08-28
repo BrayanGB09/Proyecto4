@@ -564,6 +564,7 @@ const apellido = document.getElementById("apellido");
 const correo = document.getElementById("correo");
 const password = document.getElementById("password");
 const btnRegistro = document.getElementById("btnRegistro");
+const btn2 = document.getElementById("btn2");
 btnRegistro.addEventListener("click", function() {
     crearUsuario();
     async function crearUsuario() {
@@ -571,6 +572,7 @@ btnRegistro.addEventListener("click", function() {
         const apellidoUsuario = apellido.value;
         const correoUsuario = correo.value;
         const passwordUsuario = password.value;
+        //Recoger los valores del formulario
         if (!nombreUsuario || !apellidoUsuario || !correoUsuario || !passwordUsuario) mensaje.textContent = "Debe llenar los espacios";
         else {
             nombre.value = " ";
@@ -589,29 +591,28 @@ btnRegistro.addEventListener("click", function() {
         }
     }
 });
+function verLogin() {
+    window.location.href = "login.html";
+}
+btn2.addEventListener("click", verLogin);
 
-},{"../services/postUsers":"dzUx9","../services/getUsers":"b4hYb"}],"dzUx9":[function(require,module,exports) {
+},{"../services/getUsers":"b4hYb","../services/postUsers":"dzUx9"}],"b4hYb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "postUsers", ()=>postUsers);
-async function postUsers(nombre, apellido, correo, password) {
+parcelHelpers.export(exports, "getUsers", ()=>getUsers);
+async function getUsers() {
     try {
-        const userData = {
-            nombre,
-            apellido,
-            correo,
-            password
-        };
         const response = await fetch("http://localhost:3001/users", {
-            method: "POST",
+            method: "GET",
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify(userData)
+            }
         });
-        return await response.json();
+        if (!response.ok) throw new Error("Error fetching users");
+        const users = await response.json();
+        return users;
     } catch (error) {
-        console.error("Error posting user:", error);
+        console.error("Error fetching users:", error);
         throw error;
     }
 }
@@ -646,23 +647,28 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"b4hYb":[function(require,module,exports) {
+},{}],"dzUx9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getUsers", ()=>getUsers);
-async function getUsers() {
+parcelHelpers.export(exports, "postUsers", ()=>postUsers);
+async function postUsers(nombre, apellido, correo, password) {
     try {
+        const userData = {
+            nombre,
+            apellido,
+            correo,
+            password
+        };
         const response = await fetch("http://localhost:3001/users", {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify(userData)
         });
-        if (!response.ok) throw new Error("Error fetching users");
-        const users = await response.json();
-        return users;
+        return await response.json();
     } catch (error) {
-        console.error("Error fetching users:", error);
+        console.error("Error posting user:", error);
         throw error;
     }
 }

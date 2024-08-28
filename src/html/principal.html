@@ -4,37 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/principal.css">
 </head>
 <body>
-    <div class="contenedor">
-        <h1 class="titulo">Consultas de Estudiantes</h1>
-       
-        <input class="buscador" type="search" placeholder="Buscar">           
 
-        <input class="input" placeholder="Nombre" type="text" id="nombre">
-                              
-        <input class="input" placeholder="Apellido" type="text" id="apellido">
-                   
-        <input class="input" placeholder="Consulta" type="text" id="consulta">
-                   
-        <input class="input" type="date" id="date">
+   <header>
+     <div><h3>Formulario de Consultas</h3></div>
+     <div><button class="btnHistorial" id="btnHistorial">Ver historial de Consultas</button></div>
+ </header>
+ <br><br><br>
 
-        <input class="input" type="time" id="hora">
-                   
-        <button class="btnGuardar" id="btnGuardar">Guardar</button>
+<div class="contenedor">
+ <div class="divInputDatos">
+ <input class="input" id="nombre" type="text" placeholder="Nombre"><br><br>
+ <input class="input" id="apellido" type="text" placeholder="Apellido"><br><br>
+ <input class="input" id="consultasUsuario" type="text" placeholder="Consulta">
 
+ </div>
 
-        <button id="btnHistorial">Historial</button>
+ <br><br>
+
+ <div class="divFechaHora">
+     <div class="divFecha">
+     <label class="textoFechaHora" for="fecha">Fecha:</label><br><br>
+     <input class="inputFechaHora" type="date" id="fecha" name="fecha"/>
+     </div>
+
+     <div class="divhora">
+     <label class="textoFechaHora" for="hora">Hora:</label><br><br>
+     <input class="inputFechaHora" type="time" id="hora" name="hora"/>
+     </div>
+ </div>
+
+ <br>
+
+ <div class="divBtnEnviar">
+     <button class="btnEnviar" id="btnEnviar">Enviar Consulta</button>
+ </div>
+ <br>
     
-        <h3 id="mensaje"></h3>
-    </div>
+ <div id="mensaje"></div>
 
-   
-    <div class="contenedorConsulta" id="contenedorConsulta">
-        <h2 class="subtitulo">Consultas</h2>
-    </div> 
-    <script type="module" src="../js/principal.js"></script>
+  <br><br><br>
+  <div class="divTabla">
+  <div class="contenedorTabla">
+  <table id="tablaSolicitudes">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Consulta</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <h3 id="mensaje"></h3>
+    <tbody id="cuerpoTabla">
+    </tbody>
+   </table>
+   </div>
+ </div>
+
+</div>
+
+<script type="module" src="../js/principal.js"></script>
 </body>
 </html>

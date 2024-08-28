@@ -7,45 +7,48 @@
     <link rel="stylesheet" href="/prueba.00ff5744.css">
 </head>
 <body>
-  <header>
-    <div><h3>Formulario de Consultas</h3></div>
-    <div><button class="btnHistorial" id="btnHistorial">Ver historial de Consultas</button></div>
-</header>
-<br><br><br>
-<div class="divInputDatos">
-<input class="input" id="nombre" type="text" placeholder="Nombre"><br><br>
-<input class="input" id="apellido" type="text" placeholder="Apellido"><br><br>
-<input class="input" id="consultas" type="text" placeholder="Consulta">
 
-</div>
+   <header>
+     <div><h3>Formulario de Consultas</h3></div>
+     <div><button class="btnHistorial" id="btnHistorial">Ver historial de Consultas</button></div>
+ </header>
+ <br><br><br>
 
-<br><br>
+<div class="contenedor">
+ <div class="divInputDatos">
+ <input class="input" id="nombre" type="text" placeholder="Nombre"><br><br>
+ <input class="input" id="apellido" type="text" placeholder="Apellido"><br><br>
+ <input class="input" id="consultasUsuario" type="text" placeholder="Consulta">
 
-<div class="divFechaHora">
-    <div class="divFecha">
-    <label class="textoFechaHora" for="fecha">Fecha:</label><br><br>
-    <input class="inputFechaHora" type="date" id="fecha" name="fecha">
-    </div>
+ </div>
 
-    <div class="divhora">
-    <label class="textoFechaHora" for="hora">Hora:</label><br><br>
-    <input class="inputFechaHora" type="time" id="hora" name="hora">
-    </div>
-</div>
+ <br><br>
 
-<br>
+ <div class="divFechaHora">
+     <div class="divFecha">
+     <label class="textoFechaHora" for="fecha">Fecha:</label><br><br>
+     <input class="inputFechaHora" type="date" id="fecha" name="fecha">
+     </div>
 
-<div class="divBtnEnviar">
-    <button class="btnEnviar" id="btnEnviar">Enviar Consulta</button>
-</div>
-    <br>
+     <div class="divhora">
+     <label class="textoFechaHora" for="hora">Hora:</label><br><br>
+     <input class="inputFechaHora" type="time" id="hora" name="hora">
+     </div>
+ </div>
+
+ <br>
+
+ <div class="divBtnEnviar">
+     <button class="btnEnviar" id="btnEnviar">Enviar Consulta</button>
+ </div>
+ <br>
     
-<div id="mensaje"></div>
+ <div id="mensaje"></div>
 
-<br><br><br>
-<div class="divTabla">
-<div class="contenedorTabla">
-<table id="tablaSolicitudes">
+  <br><br><br>
+  <div class="divTabla">
+  <div class="contenedorTabla">
+  <table id="tablaSolicitudes">
     <thead>
         <tr>
             <th>Nombre</th>
@@ -60,8 +63,10 @@
     <h3 id="mensaje"></h3>
     <tbody id="cuerpoTabla">
     </tbody>
- </table>
-  </div>
+   </table>
+   </div>
+ </div>
+
 </div>
 
 <script src="/prueba.455b09a8.js" defer=""></script>

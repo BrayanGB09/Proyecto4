@@ -141,10 +141,11 @@ tbody tr:hover {
 }
 
 .btnAceptar, .btnRechazar {
-  width: 45px;
+  width: 100px;
   height: 45px;
   cursor: pointer;
   border: #0000;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=prueba.00ff5744.css.map */
