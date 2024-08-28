@@ -1,7 +1,6 @@
 import { postConsultas, postHistorial,} from "../services/postConsultas";
 import { getConsultas, getConsultasById } from "../services/getConsultas";
 import { deleteConsultas } from "../services/deleteConsultas";
-//import { getUsers } from "../services/getUsers";
 
 
 const nombre = document.getElementById("nombre");
